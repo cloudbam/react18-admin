@@ -7,8 +7,8 @@
     "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:eslint": "eslint --fix --ext .js,.ts,.tsx ./src",
-		"lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
-		"lint:lint-staged": "lint-staged"
+    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
+    "lint:lint-staged": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -33,9 +33,8 @@
     "vite": "^4.3.5"
   },
   "husky": {
-    "hook": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

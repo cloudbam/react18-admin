@@ -1,6 +1,6 @@
 import React from "react";
 let a: number;
-a = "dddd";
+ab = "dddd";
 const App = () => {
   return (
     <div>
