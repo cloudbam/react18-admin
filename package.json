@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:eslint": "eslint --fix --ext .js,.ts,.tsx ./src",
+		"lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
+		"lint:lint-staged": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -24,14 +27,21 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4",
     "vite": "^4.3.5"
   },
   "husky": {
     "hook": {
-      "pre-commit": "npm run ...",
+      "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --config .eslintrc.js"
+    ],
+    "**/*": "prettier --write ."
   }
 }
