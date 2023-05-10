@@ -1,10 +1,15 @@
 import React from "react";
+import { Button } from "antd";
+
+// ...
+
 var a: number;
 console.log("ddd");
 const App = () => {
 	return (
 		<div>
-			<div>配置vite + ts + react</div>
+			<Button type="primary">按钮</Button>
+			<div>配置vite + ts + readddct</div>
 		</div>
 	);
 };
