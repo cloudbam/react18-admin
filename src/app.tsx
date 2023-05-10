@@ -1,12 +1,12 @@
 import React from "react";
-let a: number;
-a = 1;
+var a: number;
+console.log("ddd");
 const App = () => {
-  return (
-    <div>
-      <div>配置vite + ts + react</div>
-    </div>
-  );
+	return (
+		<div>
+			<div>配置vite + ts + react</div>
+		</div>
+	);
 };
 
 export default App;

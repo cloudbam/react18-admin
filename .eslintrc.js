@@ -3,14 +3,14 @@
 module.exports = {
 	settings: {
 		react: {
-			version: "detect"
-		}
+			version: "detect",
+		},
 	},
 	root: true,
 	env: {
 		browser: true,
 		node: true,
-		es6: true
+		es6: true,
 	},
 	/* 指定如何解析语法 */
 	parser: "@typescript-eslint/parser",
@@ -20,8 +20,8 @@ module.exports = {
 		sourceType: "module",
 		jsxPragma: "React",
 		ecmaFeatures: {
-			jsx: true
-		}
+			jsx: true,
+		},
 	},
 	plugins: ["react", "@typescript-eslint", "react-hooks", "prettier"],
 	/* 继承某些已有的规则 */
@@ -32,7 +32,7 @@ module.exports = {
 		"plugin:react/jsx-runtime",
 		"plugin:react-hooks/recommended",
 		"prettier",
-		"plugin:prettier/recommended"
+		"plugin:prettier/recommended",
 	],
 	/*
 	 * "off" 或 0    ==>  关闭规则
@@ -64,6 +64,6 @@ module.exports = {
 
 		// react (https://github.com/jsx-eslint/eslint-plugin-react)
 		"react-hooks/rules-of-hooks": "off",
-		"react-hooks/exhaustive-deps": "off"
-	}
+		"react-hooks/exhaustive-deps": "off",
+	},
 };
