@@ -1,8 +1,6 @@
 import React from "react";
 import { Button } from "antd";
 
-// ...
-
 var a: number;
 console.log("ddd");
 const App = () => {
