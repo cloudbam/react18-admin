@@ -1,14 +1,18 @@
 import React from "react";
-import { Button } from "antd";
+import { ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { RootState } from "./redux";
+import Router from "./routers";
 
-var a: number;
-console.log("ddd");
 const App = () => {
+	const { assemblySize } = useSelector((state: RootState) => state.global);
 	return (
-		<div>
-			<Button type="primary">按钮</Button>
-			<div>配置vite + ts + readddct</div>
-		</div>
+		<BrowserRouter>
+			<ConfigProvider componentSize={assemblySize}>
+				<Router />
+			</ConfigProvider>
+		</BrowserRouter>
 	);
 };
 
