@@ -1,10 +1,19 @@
+/*
+ * @Author: yinbing.liu
+ * @Date: 2023-05-12 15:41:31
+ * @LastEditors: yinbing.liu
+ * @LastEditTime: 2023-05-23 18:00:59
+ * @FilePath: /react18-admin/src/routers/index.tsx
+ * @Description:
+ */
 import { Navigate, useRoutes } from "react-router-dom";
 import Login from "@/views/login";
-import { IRouterObject } from "./types/type";
+import { RouteObjectConfig } from "./types/type";
 //  所以router
-const routerArray: IRouterObject[] = [];
+const metaRouters = import.meta.glob<Record<string, RouteObjectConfig>>("./modules/*.tsx", { eager: true, import: "default" });
+console.log(metaRouters);
 
-export const rootRouter: IRouterObject[] = [
+export const rootRouter: RouteObjectConfig[] = [
 	{
 		path: "/",
 		element: <Navigate to="/login" />,
@@ -18,7 +27,7 @@ export const rootRouter: IRouterObject[] = [
 			key: "login",
 		},
 	},
-	...routerArray,
+	// ...routerArray,
 	{
 		path: "*",
 		element: <Navigate to="/404" />,
