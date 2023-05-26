@@ -2,7 +2,7 @@
  * @Author: yinbing.liu
  * @Date: 2023-05-18 11:21:43
  * @LastEditors: yinbing.liu
- * @LastEditTime: 2023-05-23 11:21:38
+ * @LastEditTime: 2023-05-24 16:26:59
  * @FilePath: /react18-admin/src/routers/utils/authRouter.tsx
  * @Description: 路由守卫
  *
@@ -12,7 +12,6 @@ import { RootState, useSelector } from "@/redux";
 import { searchRoute } from "@/utils";
 import { Navigate, matchRoutes, useLocation } from "react-router-dom";
 import { rootRouter } from "..";
-import { RouteObjectConfig } from "../types/type";
 
 /**
  * @description: 路由守卫 权限设置
