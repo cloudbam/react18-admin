@@ -2,7 +2,7 @@
  * @Author: yinbing.liu
  * @Date: 2023-05-25 18:25:29
  * @LastEditors: yinbing.liu
- * @LastEditTime: 2023-05-26 18:02:37
+ * @LastEditTime: 2023-05-26 18:05:03
  * @FilePath: /react18-admin/src/service/config/interceptorHooks.ts
  * @Description: 请求拦截 、响应拦截
  */
@@ -18,7 +18,6 @@ import { checkStatus } from "../helper/checkStatus";
  * @param {AxiosRequestConfig} config
  * @return {*}
  */
-// TODO: any
 const requestInterceptor = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
 	console.log(config);
 

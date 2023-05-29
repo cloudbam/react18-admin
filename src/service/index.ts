@@ -12,6 +12,7 @@ import {
 	responseInterceptor,
 	responseInterceptorCatch,
 } from "./config/interceptorHooks";
+import { ResultData } from "./types/interface";
 
 const defaultConfig = {
 	// 默认地址请求地址，可在 .env 开头文件中修改
@@ -44,19 +45,19 @@ class Request {
 	}
 
 	// ** 定义核心请求
-	public get<T = any>(url: string, config?: any): Promise<T> {
+	public get<T = any>(url: string, config?: AxiosRequestConfig): Promise<ResultData<T>> {
 		return this.instance.get(url, config);
 	}
 
-	public post<T = any>(url: string, data?: any, config?: any): Promise<T> {
+	public post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<ResultData<T>> {
 		return this.instance.post(url, data, config);
 	}
 
-	public put<T>(url: string, data?: any, config?: any): Promise<T> {
+	public put<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<ResultData<T>> {
 		return this.instance.put(url, data, config);
 	}
 
-	public delete<T = any>(url: string, config?: any): Promise<T> {
+	public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<ResultData<T>> {
 		return this.instance.delete(url, config);
 	}
 }

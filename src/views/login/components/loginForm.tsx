@@ -2,7 +2,7 @@
  * @Author: yinbing.liu
  * @Date: 2023-05-24 17:28:03
  * @LastEditors: yinbing.liu
- * @LastEditTime: 2023-05-25 15:41:17
+ * @LastEditTime: 2023-05-29 14:37:18
  * @FilePath: /react18-admin/src/views/login/components/loginForm.tsx
  * @Description: 登录验证模块
  */
@@ -13,18 +13,21 @@ import md5 from "js-md5";
 import { Login } from "@/typings/spaceName/login";
 import { useNavigate } from "react-router-dom";
 import { HOME_URL } from "@/config";
+import { loginApi } from "@/service/apis/login";
 
 const LoginForm = (): ReactElement => {
 	const navigate = useNavigate();
 	const [form] = Form.useForm();
 	const [loading, setLoading] = useState<boolean>(false);
 
-	const onFinish = (values: Login.ReqLoginParams): void => {
+	const onFinish = async (values: Login.ReqLoginParams): Promise<void> => {
 		try {
 			setLoading(true);
 			values.password = md5(values.password);
 			console.log(values.password);
 			// 调用接口
+			const res = await loginApi(values);
+			console.log(res);
 
 			//存储
 
